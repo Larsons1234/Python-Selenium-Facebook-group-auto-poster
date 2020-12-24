@@ -14,7 +14,7 @@ Setup
    ```
    pip install json
    ```
- - Download the [Chrome Driver](http://chromedriver.chromium.org/downloads) and place it in the same directory with the script.
+ - Download the [Chrome Driver](http://chromedriver.chromium.org/downloads) which matches your [version of Google Chrome](https://www.businessinsider.com/what-version-of-google-chrome-do-i-have). and place it in the same directory with the script.
  
 Configure the script
 ----------
