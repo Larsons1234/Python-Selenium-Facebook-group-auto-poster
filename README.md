@@ -9,6 +9,10 @@ Setup
    ```
    pip install selenium
    ```
+ - You also need to install JSON for the TKinter/GUI version
+   ```
+   pip install json
+   ```
  - Download the [Chrome Driver](http://chromedriver.chromium.org/downloads) and place it in the same directory with the script.
  
 Configure the script
