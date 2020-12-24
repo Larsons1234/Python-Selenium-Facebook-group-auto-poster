@@ -3,7 +3,7 @@ A Python script use Selenium to achieve automatically posting images with text o
 
 Setup
 ----------
- - You need to disable 2FA on Facebook for this to work[Disable 2 step authetnication](https://www.alphr.com/facebook/1006409/two-factor-authentication-2FA-facebook)
+ - You need to [disable 2 step authetnication](https://www.alphr.com/facebook/1006409/two-factor-authentication-2FA-facebook) on Facebook for this to work
  - First of all, install [Python 3](https://www.python.org/downloads/) into your machine
  
  - Then insall selenium:
