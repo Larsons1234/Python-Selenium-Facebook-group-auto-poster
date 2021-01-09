@@ -38,3 +38,5 @@ def main():
  ```
  
 After that, run the script by double click on it. Enjoy!
+
+NOTE: You need to have all your links formatted to appear in the buy, sell, discussion tab like this: https://www.facebook.com/groupname/buy_sell_discussion
