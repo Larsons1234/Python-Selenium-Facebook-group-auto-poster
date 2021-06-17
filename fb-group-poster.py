@@ -15,7 +15,7 @@ def main():
     ]
 
     # Set up text content to post
-    message = "Checkout an amazing selenium script for posting automatically on Facebook groups! https://github.com/ethanXWL/Python-Selenium-Facebook-group-poster"
+    message = "Checkout an amazing selenium script for posting automatically on Facebook groups!"
 
     # Set up paths of images to post
     images_list = ['C:/Users/OEM/Pictures/sample1.jpg','C:/Users/OEM/Pictures/sample2.jpg']
@@ -33,41 +33,43 @@ def main():
     #Accepts all cookies
     try:
         cookieselement = driver.find_element(By.XPATH, '//*[@title="Accept All"]').click()
+        time.sleep(2)
     except:
         pass
     loginelement = driver.find_element(By.XPATH,'//*[@name="login"]').click()
-    time.sleep(2)
+    time.sleep(4)
 
     # Post on each group
     for group in groups_links_list:
         driver.get(group)
-        time.sleep(2)
+        time.sleep(4)
         #Goes onto the next group if the group is deleted
         try:
-            driver.find_element(By.XPATH,'//span[text()="Visit Help Center"]')          
+            driver.find_element(By.XPATH,'//span[text()="Visit Help Centre"]')            
         except:
             pass
-        else:
-            continue
+        try:
+            driver.find_element(By.XPATH,'//span[text()="Leave Group"]').click()
+        except:
+            pass
         #Clicks the join button if the user is not a member of the group
         try:
             driver.find_element_by_xpath('//span[text()="Join Group"]').click()
-        #Attempts to post to the group
         except:
             pass
         #Attaches photos to the post
         for photo in images_list:
             photo_element = driver.find_element(By.XPATH,'//input[@type="file"]')
             photo_element.send_keys(photo)
-            time.sleep(1)
-        #Does not attach message if it is blank
+            time.sleep(5)
+        #Does not attach a message if it is blank
         if message != "":
-            #Finds and selects the text field in the post
+        #Finds and selects the text field in the post
             post_box = driver.find_element(By.XPATH,'//form[@method]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div[@role="textbox"]')
             post_box.click()
-            time.sleep(1)
+            time.sleep(2)
             post_box.send_keys(message)
-        time.sleep(5)
+            time.sleep(6)
         #Finds the button to send the post
         post_button = driver.find_element_by_xpath('//div[@aria-label="Post"]')
         clickable = False
@@ -76,9 +78,12 @@ def main():
             if cursor == "pointer":
                 clickable = True
             break
-        post_button.click()
-        #Creates a pause between posts
+        try:
+            post_button.click()
+        except:
+            pass
         time.sleep(10)
+        
     # Close driver
     driver.close()
 
